@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/lus/aoc-2022/x"
+	"github.com/lus/aoc-2022/internal/x"
 	"sort"
 	"strconv"
 	"strings"
@@ -25,8 +25,10 @@ func main() {
 		x.PanicOnErr(err)
 		cur += number
 	}
-	sort.Ints(elves)
-	elves = elves[len(elves)-3:]
+	sort.Slice(elves, func(i, j int) bool {
+		return elves[j] < elves[i]
+	})
 
-	fmt.Printf("The answer is %d.\n", elves[0]+elves[1]+elves[2])
+	fmt.Printf("The Elf carrying the most Calories carries a total amount of %d.\n", elves[0])
+	fmt.Printf("The 3 Elves carrying the most Calories carry a total amount of %d.\n", elves[0]+elves[1]+elves[2])
 }
