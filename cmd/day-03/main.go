@@ -15,7 +15,7 @@ func calculatePriority(item rune) int {
 }
 
 func main() {
-	input := x.ReadInput()
+	input := x.ReadInput(true)
 	lines := strings.Split(input, "\n")
 
 	misplacedTypesPriorities := 0

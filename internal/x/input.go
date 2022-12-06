@@ -6,8 +6,11 @@ import (
 	"strings"
 )
 
-func ReadInput() string {
+func ReadInput(trim bool) string {
 	input, err := io.ReadAll(os.Stdin)
 	PanicOnErr(err)
-	return strings.TrimSpace(string(input))
+	if trim {
+		return strings.TrimSpace(string(input))
+	}
+	return string(input)
 }

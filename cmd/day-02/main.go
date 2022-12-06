@@ -45,7 +45,7 @@ var LosingCounterparts = map[string]string{
 }
 
 func main() {
-	input := x.ReadInput()
+	input := x.ReadInput(true)
 	lines := strings.Split(input, "\n")
 
 	total1 := 0

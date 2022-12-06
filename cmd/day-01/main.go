@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	input := x.ReadInput()
+	input := x.ReadInput(true)
 	lines := strings.Split(input, "\n")
 
 	var elves []int
