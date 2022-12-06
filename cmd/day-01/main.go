@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/lus/aoc-2022/internal/x"
 	"sort"
-	"strconv"
 	"strings"
 )
 
@@ -21,8 +20,7 @@ func main() {
 			continue
 		}
 
-		number, err := strconv.Atoi(line)
-		x.PanicOnErr(err)
+		number := x.MustInt(line)
 		cur += number
 	}
 	sort.Slice(elves, func(i, j int) bool {
